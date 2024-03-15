@@ -14,6 +14,29 @@ def loading_animation(duration=6):
         time.sleep(0.1)
     sys.stdout.write('\r')
     sys.stdout.write("Processing Complete!      \n")
+    
+def plswait_animation(duration=5):
+    spinner = itertools.cycle(['-', '/', '|', '\\'])
+    start_time = time.time()
+    while time.time() - start_time < duration:
+        sys.stdout.write('\r')
+        sys.stdout.write("Please Wait " + next(spinner))
+        sys.stdout.flush()
+        time.sleep(0.1)
+    sys.stdout.write('\r')
+
+
+#intro
+print("""
+ __       __  ____    ____  _______      ___      .______       _______   _______ .___________.
+|  |     |  | \   \  /   / /  _____|    /   \     |   _  \     |       \ |   ____||           |
+|  |     |  |  \   \/   / |  |  __     /  ^  \    |  |_)  |    |  .--.  ||  |__   `---|  |----`
+|  |     |  |   \      /  |  | |_ |   /  /_\  \   |      /     |  |  |  ||   __|      |  |     
+|  `----.|  |    \    /   |  |__| |  /  _____  \  |  |\  \----.|  '--'  ||  |____     |  |     
+|_______||__|     \__/     \______| /__/     \__\ | _| `._____||_______/ |_______|    |__|     
+                                                                                               """)
+
+plswait_animation()
 
 #Data Collection
 name = input("type in your full name: ")  
